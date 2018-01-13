@@ -1,7 +1,8 @@
-# 24h_velo
+# 24 Heures vélo : Java
 
+## Utilisation
 
-##Licence
+## Licence
 
 MIT License
 
