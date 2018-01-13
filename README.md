@@ -2,9 +2,59 @@
 
 ## Git
 
-Si la modification porte sur une _issue_, merci de bien vouloir respecter le format suivant `#1 - Description de la solution à l'issue n°1.`.
-
+Si la modification porte sur une _issue_, merci de bien vouloir respecter le format suivant 
+```git
+#1 - Description de la solution à l'issue n°1.
+```
 ## Utilisation
+
+### Code
+
+Au niveau du code, l'utilisation sur macOS ou sur Windows est différente. 
+
+Pour la version macOS, la classe _main_ s'écrit comme suit
+```java
+public static void main(final String[] args) {
+  System.setProperty("apple.laf.useScreenMenuBar", "true");
+  System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Name");
+  EventQueue.invokeLater(new Runnable() {
+    @Override
+    public void run() {
+	    try {
+		    Fenetre frame = new Fenetre();
+		    frame.setVisible(true);
+	    } catch (Exception e) {
+		    e.printStackTrace();
+	    }
+    }
+  });
+}
+```
+    
+Tandis que pour la version Windows, la classe _main_ s'écrit comme suit
+```java
+public static void main(final String[] args) {
+  EventQueue.invokeLater(new Runnable() {
+    @Override
+    public void run() {
+	    try {
+		    Fenetre frame = new Fenetre();
+		    frame.setVisible(true);
+	    } catch (Exception e) {
+		    e.printStackTrace();
+	    }
+    }
+  });
+}
+```
+Normalement le fait de ne pas rajouter les lignes de code 
+```java
+System.setProperty("apple.laf.useScreenMenuBar", "true");
+System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Name");
+```
+dans la version macOS ne fait pas planter le programme mais des erreurs qui ne seront pas _catch_ pourrait apparaître. C'est également le cas si vous laissez les lignes dans la version Windows. Mais par propreté du code, n'oubliez pas de les enveler/rajouter.
+
+### Programme
 
 ## To Do 
 
@@ -12,6 +62,8 @@ Toutes les features qui ne doivent être faite sont listées dans cette section.
 1. Ecrire le Readme.md avec notamment l'utilisation du programme.
 2. Refonte complète de l'interface graphique.
 3. Mettre un bouton Pause/Resume sur le chrono perso.
+4. Commenter le programme
+5. Optimiser les tâches.
 
 ## Licence
 
