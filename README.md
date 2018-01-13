@@ -2,6 +2,12 @@
 
 ## Utilisation
 
+## To Do 
+
+1. Ecrire le Readme.md avec notamment l'utilisation du programme.
+2. Refonte complète de l'interface graphique.
+3. Mettre un bouton Pause/Resume sur le chrono perso.
+
 ## Licence
 
 MIT License
