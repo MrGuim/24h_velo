@@ -1,9 +1,14 @@
 # 24 Heures vélo : Java
 
+## Git
+
+Si la modification porte sur une _issue_, merci de bien vouloir respecter le format suivant `<#1 - Description de la solution à l'issue n°1.>`.
+
 ## Utilisation
 
 ## To Do 
 
+Toutes les features qui ne doivent être faite sont listées dans cette section. Elles sont seulement basées sur les idées de l'auteur ainis que sur les discussions orales hors du GitHub. Les autres features qui ont été proposées sont disponible [ici](https://github.com/MrGuim/24h_velo/issues).
 1. Ecrire le Readme.md avec notamment l'utilisation du programme.
 2. Refonte complète de l'interface graphique.
 3. Mettre un bouton Pause/Resume sur le chrono perso.
