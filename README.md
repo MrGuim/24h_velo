@@ -2,7 +2,7 @@
 
 ## Git
 
-Si la modification porte sur une _issue_, merci de bien vouloir respecter le format suivant `<#1 - Description de la solution à l'issue n°1.>`.
+Si la modification porte sur une _issue_, merci de bien vouloir respecter le format suivant `#1 - Description de la solution à l'issue n°1.`.
 
 ## Utilisation
 
