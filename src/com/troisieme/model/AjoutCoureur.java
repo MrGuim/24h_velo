@@ -30,6 +30,7 @@ public class AjoutCoureur extends JDialog {
   private JTextField nom;
   private Resultat resultat = new Resultat();
   private static int count = 1;
+  private JButton okBouton = new JButton("OK");
 
   public AjoutCoureur(JFrame parent, String title, boolean modal){
     super(parent, title, modal);
@@ -52,6 +53,7 @@ public class AjoutCoureur extends JDialog {
     JPanel panNom = new JPanel();
     panNom.setBackground(Color.white);
     panNom.setPreferredSize(new Dimension(220, 60));
+    
     nom = new JTextField();
     nom.setPreferredSize(new Dimension(100, 25));
     nomLabel = new JLabel("Saisir un nom :");
@@ -64,6 +66,8 @@ public class AjoutCoureur extends JDialog {
 
     JPanel control = new JPanel();
     JButton okBouton = new JButton("OK");
+    getRootPane().setDefaultButton(okBouton);
+  
     
     okBouton.addActionListener(new ActionListener(){
       @Override
@@ -90,5 +94,6 @@ public class AjoutCoureur extends JDialog {
 
     this.getContentPane().add(content, BorderLayout.CENTER);
     this.getContentPane().add(control, BorderLayout.SOUTH);
+    
   }  
 }

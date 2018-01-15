@@ -161,6 +161,14 @@ public class Fenetre extends JFrame {
     				minChrono++;
     			}
     			secChrono++;
+    			if(secChrono == 60) {
+    				if(minChrono<10)
+        				label_2.setText("0"+String.valueOf(minChrono+1));
+        			else
+        				label_2.setText(String.valueOf(minChrono+1));
+    				label_4.setText("00");
+    			}
+    			else {
     			if(minChrono<10)
     				label_2.setText("0"+String.valueOf(minChrono));
     			else
@@ -170,7 +178,25 @@ public class Fenetre extends JFrame {
     			else
     				label_4.setText(String.valueOf(secChrono));
             }
+            }
         });
+		
+		JButton btnPause = new JButton("Pause");
+		btnPause.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	if(btnPause.getText() == "Pause"){
+            		chrono.stop();
+            		btnPause.setText("Resume");
+            	}
+            	else{
+            		chrono.start();
+            		btnPause.setText("Pause");
+            	}
+            }
+        });
+		
+		
 		//timer total du temps restant
 		timer = new Timer(1000, new ActionListener() {
             @Override
@@ -334,6 +360,7 @@ public class Fenetre extends JFrame {
 		label_4.setFont(new Font("Lucida Grande", Font.BOLD, 40));
 		
 		Classement classement = new Classement(Fenetre.FILENAME);
+		
 		//et on met en page youpiiiie
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -357,7 +384,10 @@ public class Fenetre extends JFrame {
 										.addComponent(btnSecondTour)))))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(89)
-							.addComponent(lblChronoActuel, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(lblChronoActuel, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(98)
+							.addComponent(btnPause, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE)))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
@@ -417,7 +447,9 @@ public class Fenetre extends JFrame {
 										.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
 										.addComponent(label_2)))
 								.addComponent(lblDerniersTemps, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE))
-							.addGap(88)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnPause)
+							.addGap(53)
 							.addComponent(btnAjouterRouleur)
 							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 							.addComponent(btnTourFini)
